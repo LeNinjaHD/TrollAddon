@@ -1,0 +1,7 @@
+name: TrollAddon
+version: '${project.version}'
+main: com.leprofi.trolladdon.TrollAddon
+api-version: 1.17
+depend: [ MBedwars ]
+authors: [ LeNinjaHD ]
+description: A Troll Addon for MBedWars

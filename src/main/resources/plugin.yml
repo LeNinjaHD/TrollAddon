@@ -5,3 +5,7 @@ api-version: 1.17
 depend: [ MBedwars ]
 authors: [ LeNinjaHD ]
 description: A Troll Addon for MBedWars
+
+commands:
+  troll:
+    description: Troll!

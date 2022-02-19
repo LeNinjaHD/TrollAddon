@@ -1,9 +1,12 @@
 package com.leprofi.trolladdon;
 
+import com.leprofi.trolladdon.commands.TrollCommand;
+import com.leprofi.trolladdon.listener.InventoryClickListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TrollAddon extends JavaPlugin {
+    public static String prefix = "§cTrollAddon §8» §7";
 
     @Override
     public void onEnable() {
@@ -22,6 +25,15 @@ public final class TrollAddon extends JavaPlugin {
             return;
         }
 
+        //Load everything
+        getLogger().info("Loading..");
+        getLogger().info("Loading Prefix \"" + prefix + "\"");
+        getLogger().info("Loading Listeners & Commands");
+
+        //Listeners
+        Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
+        //Commands
+        getCommand("troll").setExecutor(new TrollCommand());
     }
 
     @Override

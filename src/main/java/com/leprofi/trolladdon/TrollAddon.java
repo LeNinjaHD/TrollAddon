@@ -2,11 +2,15 @@ package com.leprofi.trolladdon;
 
 import com.leprofi.trolladdon.commands.TrollCommand;
 import com.leprofi.trolladdon.listener.InventoryClickListener;
+import de.marcely.bedwars.api.arena.Arena;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+
 public final class TrollAddon extends JavaPlugin {
     public static String prefix = "§cTrollAddon §8» §7";
+    public static ArrayList<Arena> trollArenas = new ArrayList<>();
 
     @Override
     public void onEnable() {

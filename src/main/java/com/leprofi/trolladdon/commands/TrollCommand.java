@@ -38,7 +38,8 @@ public class TrollCommand implements CommandExecutor {
 
     public void openGUI(Player player) {
         Inventory inventory = Bukkit.createInventory(player, 54, "§cTroll §bMenu");
-        inventory.setItem(13, Items.getItem("fly"));
+        inventory.setItem(12, Items.getItem("fly"));
+        inventory.setItem(14, Items.getItem("invis"));
 
         for (int i = 0; i < inventory.getSize(); i++) {
             if(inventory.getItem(i) == null) {

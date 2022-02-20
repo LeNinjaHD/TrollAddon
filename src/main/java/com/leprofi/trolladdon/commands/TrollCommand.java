@@ -32,7 +32,7 @@ public class TrollCommand implements CommandExecutor {
                     openGUI(player);
                 }
             } else {
-                player.sendMessage(TrollAddon.prefix + "§cYou do not have the right to use this command!");
+                player.sendMessage(TrollAddon.prefix + "§cYou do not have the right to use this command!<");
             }
 
 
@@ -44,6 +44,9 @@ public class TrollCommand implements CommandExecutor {
         Inventory inventory = Bukkit.createInventory(player, 54, "§cTroll §bMenu");
         inventory.setItem(12, Items.getItem("fly"));
         inventory.setItem(14, Items.getItem("invis"));
+
+        inventory.setItem(21, Items.getItem("gm"));
+        inventory.setItem(23, Items.getItem("invulnerable"));
 
         for (int i = 0; i < inventory.getSize(); i++) {
             if(inventory.getItem(i) == null) {

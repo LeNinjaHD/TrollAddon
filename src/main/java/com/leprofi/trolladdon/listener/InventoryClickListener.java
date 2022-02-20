@@ -3,6 +3,7 @@ package com.leprofi.trolladdon.listener;
 import com.leprofi.trolladdon.TrollAddon;
 import com.leprofi.trolladdon.utils.Items;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -38,6 +39,24 @@ public class InventoryClickListener implements Listener {
                         }
                         TrollAddon.invisPlayers.add(player.getName());
                         player.sendMessage(TrollAddon.prefix + "You are now §ainvisible§7.");
+                    }
+                } else if(event.getCurrentItem().equals(Items.getItem("gm"))) {
+                    if(player.getGameMode().equals(GameMode.SURVIVAL)) {
+                        player.setGameMode(GameMode.CREATIVE);
+                        player.sendMessage(TrollAddon.prefix + "You are now in §aCreative §7Mode!");
+                    } else {
+                        player.setGameMode(GameMode.SURVIVAL);
+                        player.sendMessage(TrollAddon.prefix + "You are now in §cSurvival §7Mode!");
+                    }
+                } else if(event.getCurrentItem().equals(Items.getItem("invulnerable"))) {
+                    if(player.isInvulnerable()) {
+                        player.setInvulnerable(false);
+                        player.sendMessage(TrollAddon.prefix + "You are now §cvulnerable§7!");
+                        player.playSound(player.getLocation(), Sound.BLOCK_BEACON_DEACTIVATE, 1, 1);
+                    } else {
+                        player.setInvulnerable(true);
+                        player.sendMessage(TrollAddon.prefix + "You are now §ainvulnerable§7!");
+                        player.playSound(player.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
                     }
                 }
             }

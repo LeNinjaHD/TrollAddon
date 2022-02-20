@@ -119,6 +119,12 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder addItemFlag(ItemFlag itemFlag) {
+        this.meta.addItemFlags(itemFlag);
+        itemStack.setItemMeta(meta);
+        return this;
+    }
+
     public ItemBuilder addAttributeModifier(Attribute attribute, AttributeModifier attributeModifier) {
         this.meta.addAttributeModifier(attribute, attributeModifier);
         itemStack.setItemMeta(meta);

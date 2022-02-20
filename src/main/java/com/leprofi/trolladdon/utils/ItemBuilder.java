@@ -12,7 +12,9 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.potion.PotionData;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -123,11 +125,19 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder setBasePotionData(PotionData potionData) {
+        PotionMeta potionMeta = (PotionMeta) itemStack.getItemMeta();
+        potionMeta.setBasePotionData(potionData);
+        itemStack.setItemMeta(potionMeta);
+        return this;
+    }
+
     public ItemStack getItemStack(){
         this.meta.setLore(lore);
         itemStack.setItemMeta(meta);
         return itemStack;
     }
+
 
 
 }

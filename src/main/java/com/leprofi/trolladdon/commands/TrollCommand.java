@@ -19,16 +19,20 @@ public class TrollCommand implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
-            if(args.length > 0) {
-                if(args[0].equalsIgnoreCase("confirm")) {
-                    openGUI(player);
-                    TrollAddon.trollArenas.add(GameAPI.get().getArenaByPlayer(player));
+            if (player.hasPermission("trolladdon.gui")) {
+                if(args.length > 0) {
+                    if(args[0].equalsIgnoreCase("confirm")) {
+                        openGUI(player);
+                        TrollAddon.trollArenas.add(GameAPI.get().getArenaByPlayer(player));
+                    }
                 }
-            }
-            if(!TrollAddon.trollArenas.contains(GameAPI.get().getArenaByPlayer(player))) {
-                player.sendMessage(TrollAddon.prefix + "§cWARNING! §7If you want to enable Troll Mode, type \"/troll confirm\". This will disable Stats for all players in this Round.");
+                if(!TrollAddon.trollArenas.contains(GameAPI.get().getArenaByPlayer(player))) {
+                    player.sendMessage(TrollAddon.prefix + "§cWARNING! §7If you want to enable Troll Mode, type \"/troll confirm\". This will disable Stats for all players in this Round.");
+                } else {
+                    openGUI(player);
+                }
             } else {
-                openGUI(player);
+                player.sendMessage(TrollAddon.prefix + "§cYou do not have the right to use this command!");
             }
 
 

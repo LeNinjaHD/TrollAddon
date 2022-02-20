@@ -11,6 +11,12 @@ import java.util.ArrayList;
 public final class TrollAddon extends JavaPlugin {
     public static String prefix = "§cTrollAddon §8» §7";
     public static ArrayList<Arena> trollArenas = new ArrayList<>();
+    public static ArrayList<String> invisPlayers = new ArrayList<>();
+    private static TrollAddon instance;
+
+    public TrollAddon() {
+        instance = this;
+    }
 
     @Override
     public void onEnable() {
@@ -43,5 +49,9 @@ public final class TrollAddon extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public static TrollAddon getInstance() {
+        return instance;
     }
 }

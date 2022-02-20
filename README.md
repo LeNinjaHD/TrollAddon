@@ -10,3 +10,5 @@ This is still in Early Stage Development!
 
 ## Permissions
 - trolladdon.gui - Permission for /troll
+
+You can find Release in the Releases Tab and Test builds here: https://github.com/LeNinjaHD/TrollAddon/actions

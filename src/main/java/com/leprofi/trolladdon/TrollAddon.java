@@ -50,6 +50,8 @@ public final class TrollAddon extends JavaPlugin {
         int pluginId = 14431;
         Metrics metrics = new Metrics(this, pluginId);
 
+        getLogger().info("Done!");
+
     }
 
     @Override

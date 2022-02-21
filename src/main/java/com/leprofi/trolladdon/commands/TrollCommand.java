@@ -32,7 +32,7 @@ public class TrollCommand implements CommandExecutor {
                     openGUI(player);
                 }
             } else {
-                player.sendMessage(TrollAddon.prefix + "§cYou do not have the right to use this command!<");
+                player.sendMessage(TrollAddon.prefix + "§cYou do not have the right to use this command!");
             }
 
 

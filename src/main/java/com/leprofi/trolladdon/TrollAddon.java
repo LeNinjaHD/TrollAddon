@@ -3,6 +3,7 @@ package com.leprofi.trolladdon;
 import com.leprofi.trolladdon.commands.TrollCommand;
 import com.leprofi.trolladdon.listener.HitListener;
 import com.leprofi.trolladdon.listener.InventoryClickListener;
+import com.leprofi.trolladdon.listener.PlayerMoveListener;
 import com.leprofi.trolladdon.listener.PlayerStatChangeListener;
 import com.leprofi.trolladdon.utils.Metrics;
 import de.marcely.bedwars.api.arena.Arena;
@@ -15,6 +16,7 @@ public final class TrollAddon extends JavaPlugin {
     public static String prefix = "§cTrollAddon §8» §7";
     public static ArrayList<Arena> trollArenas = new ArrayList<>();
     public static ArrayList<String> invisPlayers = new ArrayList<>();
+    public static ArrayList<String> frozenPlayers = new ArrayList<>();
     private static TrollAddon instance;
 
     public TrollAddon() {
@@ -47,6 +49,7 @@ public final class TrollAddon extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerStatChangeListener(), this);
         Bukkit.getPluginManager().registerEvents(new HitListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerMoveListener(), this);
 
         //Commands
         getCommand("troll").setExecutor(new TrollCommand());

@@ -2,6 +2,7 @@ package com.leprofi.trolladdon;
 
 import com.leprofi.trolladdon.commands.TrollCommand;
 import com.leprofi.trolladdon.listener.InventoryClickListener;
+import com.leprofi.trolladdon.utils.Metrics;
 import de.marcely.bedwars.api.arena.Arena;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -44,6 +45,11 @@ public final class TrollAddon extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         //Commands
         getCommand("troll").setExecutor(new TrollCommand());
+
+        getLogger().info("Loading bStats");
+        int pluginId = 14431;
+        Metrics metrics = new Metrics(this, pluginId);
+
     }
 
     @Override

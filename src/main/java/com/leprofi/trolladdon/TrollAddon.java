@@ -1,7 +1,9 @@
 package com.leprofi.trolladdon;
 
 import com.leprofi.trolladdon.commands.TrollCommand;
+import com.leprofi.trolladdon.listener.HitListener;
 import com.leprofi.trolladdon.listener.InventoryClickListener;
+import com.leprofi.trolladdon.listener.PlayerStatChangeListener;
 import com.leprofi.trolladdon.utils.Metrics;
 import de.marcely.bedwars.api.arena.Arena;
 import org.bukkit.Bukkit;
@@ -43,6 +45,9 @@ public final class TrollAddon extends JavaPlugin {
 
         //Listeners
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerStatChangeListener(), this);
+        Bukkit.getPluginManager().registerEvents(new HitListener(), this);
+
         //Commands
         getCommand("troll").setExecutor(new TrollCommand());
 

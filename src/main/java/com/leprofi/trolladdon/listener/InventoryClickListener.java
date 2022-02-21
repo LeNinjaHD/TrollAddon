@@ -58,6 +58,9 @@ public class InventoryClickListener implements Listener {
                         player.sendMessage(TrollAddon.prefix + "You are now §ainvulnerable§7!");
                         player.playSound(player.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
                     }
+                } else if(event.getCurrentItem().equals(Items.getItem("freeze"))) {
+                    player.getInventory().addItem(Items.getItem("freeze"));
+                    player.closeInventory();
                 }
             }
         }

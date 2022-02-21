@@ -11,6 +11,7 @@ public class Items {
     private static ItemStack invis = new ItemBuilder(Material.POTION).setBasePotionData(new PotionData(PotionType.INVISIBILITY, false, false)).addItemFlag(ItemFlag.HIDE_POTION_EFFECTS).setName("§bInvisibility").addLoreLine("§7Makes you §afully §binvisible §7to other players!").getItemStack();
     private static ItemStack gm = new ItemBuilder(Material.GRASS_BLOCK).setName("§aToggle GameMode").addLoreLine("§7Toggle between Creative & Survival!").getItemStack();
     private static ItemStack invulnerable = new ItemBuilder(Material.TOTEM_OF_UNDYING).setName("§eInvulnerability").addLoreLine("§7Makes you §eIMMORTAL§7!").getItemStack();
+    private static ItemStack freeze = new ItemBuilder(Material.ICE).setName("§bIce Staff").addLoreLine("§7Everyone you §chit §7will §bfreeze §7for §a5 §7Seconds").getItemStack();
 
     public static ItemStack getItem(String itemName) {
         switch (itemName) {
@@ -22,6 +23,8 @@ public class Items {
                 return gm;
             case "invulnerable":
                 return invulnerable;
+            case "freeze":
+                return freeze;
             default:
                 return null;
         }

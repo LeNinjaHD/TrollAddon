@@ -48,6 +48,8 @@ public class TrollCommand implements CommandExecutor {
         inventory.setItem(21, Items.getItem("gm"));
         inventory.setItem(23, Items.getItem("invulnerable"));
 
+        inventory.setItem(31, Items.getItem("freeze"));
+
         for (int i = 0; i < inventory.getSize(); i++) {
             if(inventory.getItem(i) == null) {
                 inventory.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setName("").getItemStack());
